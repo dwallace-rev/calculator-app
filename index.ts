@@ -1,5 +1,5 @@
 import express from 'express';
-import { add, sub } from './calc-functions';
+import { add, multiply, sub } from './calc-functions';
 
 const app = express();
 
@@ -13,6 +13,12 @@ app.get('sub/:num1/:num2', (req, res)=>{
     const {num1, num2} = req.params;
     const dif = sub(Number(num1), Number(num2));
     res.send(dif);
+})
+
+app.get('multiply/:num1/:num2', (req, res)=>{
+    const {num1, num2} = req.params;
+    const prod = multiply(Number(num1), Number(num2));
+    res.send(prod);
 })
 
 app.listen(3000, () => "Application started");
