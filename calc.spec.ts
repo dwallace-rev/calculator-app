@@ -19,3 +19,10 @@ describe("Calculator Test", ()=>{
 
 
 });
+
+describe("Acessing environment variables", ()=>{
+    it("should read an environment variable", ()=>{
+        const PASSWORD = process.env.DB_PASSWORD;
+        expect(PASSWORD).toBeTruthy();
+    })
+})
